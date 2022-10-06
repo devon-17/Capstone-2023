@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         var horizontalAxis = movement.x == 1 || movement.x == -1;
         var verticalAxis =  movement.y == 1 || movement.y == -1;
-        if(horizontalAxis && verticalAxis)
+        if(horizontalAxis || verticalAxis)
         {
             anim.SetFloat("Last Horizontal", movement.x); // setting the last horizontal param to which way we are facing
             anim.SetFloat("Last Vertical", Input.GetAxisRaw("Vertical")); // setting the last vertical param to which way we are facing
