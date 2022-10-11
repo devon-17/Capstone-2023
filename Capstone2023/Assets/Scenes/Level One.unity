@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &27149635 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4515867743663727137, guid: fb49493a957fb5947a1f72f4c240ac44, type: 3}
+  m_PrefabInstance: {fileID: 4515867742516337522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &44230831
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,8 +738,10 @@ GameObject:
   m_Component:
   - component: {fileID: 563337684}
   - component: {fileID: 563337683}
+  - component: {fileID: 563337688}
   - component: {fileID: 563337681}
-  - component: {fileID: 563337685}
+  - component: {fileID: 563337686}
+  - component: {fileID: 563337687}
   m_Layer: 0
   m_Name: Enemy Tomato
   m_TagString: Untagged
@@ -823,15 +830,50 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563337680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.698556, y: -0.18994275, z: 0}
+  m_LocalPosition: {x: 1.77, y: 7.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &563337685
-PolygonCollider2D:
+--- !u!95 &563337686
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563337680}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5f7ece44d18cdd4cb6419c059118884, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &563337687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563337680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e1aff3c4c97ac479e25cbf32c70a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 27149635}
+  speed: 2
+  range: 0
+--- !u!61 &563337688
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -843,7 +885,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.05488491, y: 0.15871549}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -853,46 +895,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.15625, y: -0.375}
-      - {x: 0.1875, y: -0.40625}
-      - {x: 0.390625, y: -0.40625}
-      - {x: 0.40625, y: -0.375}
-      - {x: 0.421875, y: -0.296875}
-      - {x: 0.53125, y: 0}
-      - {x: 0.671875, y: -0.0625}
-      - {x: 0.78125, y: -0.03125}
-      - {x: 0.78125, y: 0.203125}
-      - {x: 0.765625, y: 0.234375}
-      - {x: 0.609375, y: 0.234375}
-      - {x: 0.59375, y: 0.375}
-      - {x: 0.578125, y: 0.421875}
-      - {x: 0.453125, y: 0.546875}
-      - {x: 0.375, y: 0.59375}
-      - {x: 0.1875, y: 0.71875}
-      - {x: 0.125, y: 0.71875}
-      - {x: 0.046875, y: 0.671875}
-      - {x: 0.015625, y: 0.609375}
-      - {x: -0.25, y: 0.59375}
-      - {x: -0.328125, y: 0.546875}
-      - {x: -0.421875, y: 0.453125}
-      - {x: -0.53125, y: 0.25}
-      - {x: -0.5625, y: 0.28125}
-      - {x: -0.640625, y: 0.296875}
-      - {x: -0.65625, y: 0.25}
-      - {x: -0.65625, y: 0.03125}
-      - {x: -0.640625, y: 0}
-      - {x: -0.4375, y: 0}
-      - {x: -0.328125, y: -0.09375}
-      - {x: -0.21875, y: -0.09375}
-      - {x: -0.28125, y: -0.3125}
-      - {x: -0.28125, y: -0.40625}
-      - {x: -0.03125, y: -0.40625}
-      - {x: -0.015625, y: -0.390625}
-      - {x: -0.015625, y: -0.171875}
-      - {x: 0.15625, y: -0.15625}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4755449, y: 1.2190957}
+  m_EdgeRadius: 0
 --- !u!1 &591054557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,11 +2461,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4515867743663727137, guid: fb49493a957fb5947a1f72f4c240ac44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.83
+      value: -9.37
       objectReference: {fileID: 0}
     - target: {fileID: 4515867743663727137, guid: fb49493a957fb5947a1f72f4c240ac44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.03999999
+      value: 7.95
       objectReference: {fileID: 0}
     - target: {fileID: 4515867743663727137, guid: fb49493a957fb5947a1f72f4c240ac44, type: 3}
       propertyPath: m_LocalPosition.z
