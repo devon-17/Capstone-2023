@@ -34,8 +34,10 @@ public class Enemy : MonoBehaviour
     public void FollowPlayer()
     {
         anim.SetBool("isMoving", true);
+        Debug.Log("IsMoving is " + anim.GetBool("isMoving"));
         anim.SetFloat("Horizontal", (target.position.x - transform.position.x));
         anim.SetFloat("Vertical", (target.position.y - transform.position.y));
+        Debug.Log(anim.GetFloat("Horizontal") + ", " + anim.GetFloat("Vertical"));
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
@@ -50,6 +52,8 @@ public class Enemy : MonoBehaviour
         if(distance == 0)
         {
             anim.SetBool("isMoving", false);
+            anim.SetFloat("Last Horizontal", (target.position.x - transform.position.x)); // setting the last horizontal param to which way we are facing
+            anim.SetFloat("Last Vertical", (target.position.y - transform.position.y)); // setting the last vertical param to which way we are facing
         }
     }
 }
