@@ -801,9 +801,11 @@ GameObject:
   - component: {fileID: 563337684}
   - component: {fileID: 563337683}
   - component: {fileID: 563337688}
+  - component: {fileID: 563337690}
   - component: {fileID: 563337681}
   - component: {fileID: 563337686}
   - component: {fileID: 563337687}
+  - component: {fileID: 563337689}
   m_Layer: 0
   m_Name: Enemy Tomato
   m_TagString: Untagged
@@ -962,6 +964,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4755449, y: 1.2190957}
   m_EdgeRadius: 0
+--- !u!114 &563337689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563337680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59cef3a127bafcc42aea78f2e058db10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 10
+  attackSpeed: 1
+--- !u!58 &563337690
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563337680}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.06, y: 0.16}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!1 &591054557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,6 +1846,24 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   levelGen: {fileID: 1675303829}
+--- !u!1 &1397671368 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4515867743663727138, guid: fb49493a957fb5947a1f72f4c240ac44, type: 3}
+  m_PrefabInstance: {fileID: 4515867742516337522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1397671369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397671368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec649c340aaa9e41b48d904517b2d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &1530452532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,6 +2785,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4515867743663727138, guid: fb49493a957fb5947a1f72f4c240ac44, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515867743663727138, guid: fb49493a957fb5947a1f72f4c240ac44, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
