@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private Animator anim;
+    [HideInInspector] public Animator anim;
     public Transform target;
     public Transform homePos;
     public float speed;
