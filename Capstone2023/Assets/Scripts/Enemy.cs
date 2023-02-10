@@ -10,11 +10,13 @@ public class Enemy : MonoBehaviour
     public float speed;
     public float maxRange;
     public float minRange;
-
+    public int healthPoints;
+    public int maxHealthPoints;
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();     
+        anim = GetComponent<Animator>();
+        healthPoints = maxHealthPoints;
     }
 
     // Update is called once per frame
@@ -55,5 +57,10 @@ public class Enemy : MonoBehaviour
             anim.SetFloat("Last Horizontal", (target.position.x - transform.position.x)); // setting the last horizontal param to which way we are facing
             anim.SetFloat("Last Vertical", (target.position.y - transform.position.y)); // setting the last vertical param to which way we are facing
         }
+    }
+
+    public void Hit()
+    {
+        
     }
 }
