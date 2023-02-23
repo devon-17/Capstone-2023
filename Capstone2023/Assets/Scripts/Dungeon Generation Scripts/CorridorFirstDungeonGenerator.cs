@@ -18,8 +18,7 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private HashSet<Vector2Int> floorPositions, corridorPositions;
 
     private List<Color> roomColors = new List<Color>();
-    [SerializeField]
-    private bool showRoomGizmo = false, showCorridorsGizmo;
+
 
     protected override void RunProceduralGeneration()
     {
