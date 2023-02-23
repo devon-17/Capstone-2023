@@ -27,7 +27,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (attacking)
         {
-            timer += timer.deltaTime;
+            //timer += timer.deltaTime;
 
             if(timer >= timeToAttack)
             {
