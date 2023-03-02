@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField]
+    private int damage = 5;
+    [SerializeField]
+    private float speed = 1.5f;
+
+    public EnemyData enemy;
+    private GameObject player;
+
     [HideInInspector] public Animator anim;
     public Transform target;
     public Transform homePos;
-    public float speed;
     public float maxRange;
     public float minRange;
-    public int healthPoints;
-    public int maxHealthPoints;
-    // Start is called before the first frame update
+
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
-        healthPoints = maxHealthPoints;
+        enemy.hp = enemy.maxHp;
     }
 
     // Update is called once per frame
@@ -40,7 +46,7 @@ public class Enemy : MonoBehaviour
         anim.SetFloat("Horizontal", (target.position.x - transform.position.x));
         anim.SetFloat("Vertical", (target.position.y - transform.position.y));
         Debug.Log(anim.GetFloat("Horizontal") + ", " + anim.GetFloat("Vertical"));
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, enemy.speed * Time.deltaTime);
     }
 
     public void GoHome()
@@ -49,7 +55,7 @@ public class Enemy : MonoBehaviour
 
         anim.SetFloat("Horizontal", (homePos.position.x - transform.position.x));
         anim.SetFloat("Vertical", (homePos.position.y - transform.position.y));
-        transform.position = Vector3.MoveTowards(transform.position, homePos.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, homePos.position, enemy.speed * Time.deltaTime);
 
         if(distance == 0)
         {
@@ -62,5 +68,17 @@ public class Enemy : MonoBehaviour
     public void Hit()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Player"))
+        {
+            if(collider.GetComponent<Health>() != null)
+            {
+                collider.GetComponent<Health>().Damage(damage);
+                this.GetComponent<Health>().Damage(10000);
+            }
+        }
     }
 }

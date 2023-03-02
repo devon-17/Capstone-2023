@@ -22376,7 +22376,6 @@ GameObject:
   - component: {fileID: 1887774462}
   - component: {fileID: 1887774461}
   - component: {fileID: 1887774460}
-  - component: {fileID: 1887774459}
   - component: {fileID: 1887774458}
   - component: {fileID: 1887774457}
   - component: {fileID: 1887774463}
@@ -22422,19 +22421,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1887774459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887774456}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2bbc4c618c83a7499a799dee067dc86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
 --- !u!95 &1887774460
 Animator:
   serializedVersion: 4
@@ -22560,14 +22546,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e1aff3c4c97ac479e25cbf32c70a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
+  speed: 1.5
+  enemy: {fileID: 11400000, guid: 2316601870fe44340966e3a30466056a, type: 2}
   anim: {fileID: 0}
   target: {fileID: 4515867743137240373}
   homePos: {fileID: 1599325682}
-  speed: 2
   maxRange: 10
   minRange: 2
-  healthPoints: 0
-  maxHealthPoints: 0
 --- !u!1 &2072839849
 GameObject:
   m_ObjectHideFlags: 0
