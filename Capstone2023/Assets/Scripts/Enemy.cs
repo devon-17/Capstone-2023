@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float speed = 1.5f;
 
-    public EnemyData enemy;
+    public EnemyData data;
     private GameObject player;
 
     [HideInInspector] public Animator anim;
@@ -22,7 +22,8 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
-        enemy.hp = enemy.maxHp;
+        data.hp = data.maxHp;
+        SetEnemyVales();
     }
 
     // Update is called once per frame
@@ -39,6 +40,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void SetEnemyVales()
+    {
+        GetComponent<Health>().SetHealth(data.hp, data.hp);
+        damage = data.damage;
+        speed = data.speed;
+    }
+
     public void FollowPlayer()
     {
         anim.SetBool("isMoving", true);
@@ -46,7 +54,7 @@ public class Enemy : MonoBehaviour
         anim.SetFloat("Horizontal", (target.position.x - transform.position.x));
         anim.SetFloat("Vertical", (target.position.y - transform.position.y));
         Debug.Log(anim.GetFloat("Horizontal") + ", " + anim.GetFloat("Vertical"));
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, enemy.speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, data.speed * Time.deltaTime);
     }
 
     public void GoHome()
@@ -55,7 +63,7 @@ public class Enemy : MonoBehaviour
 
         anim.SetFloat("Horizontal", (homePos.position.x - transform.position.x));
         anim.SetFloat("Vertical", (homePos.position.y - transform.position.y));
-        transform.position = Vector3.MoveTowards(transform.position, homePos.position, enemy.speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, homePos.position, data.speed * Time.deltaTime);
 
         if(distance == 0)
         {
