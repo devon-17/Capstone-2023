@@ -13531,9 +13531,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.5, y: 0.75}
-      - {x: 0.5, y: 0}
-      - {x: 1.5, y: -0.75}
+    - - {x: 1.287055, y: 0.74516034}
+      - {x: 0.2967348, y: 0.014518976}
+      - {x: 1.3064137, y: -0.75}
   m_UseDelaunayMesh: 0
 --- !u!1 &1599325681
 GameObject:
@@ -22521,7 +22521,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.06047845, y: 0.022679448}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -22532,7 +22532,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.6572881, y: 1.4909704}
   m_EdgeRadius: 0
 --- !u!114 &1887774464
 MonoBehaviour:
@@ -22548,12 +22548,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   speed: 1.5
-  enemy: {fileID: 11400000, guid: 2316601870fe44340966e3a30466056a, type: 2}
+  data: {fileID: 11400000, guid: 2316601870fe44340966e3a30466056a, type: 2}
   anim: {fileID: 0}
   target: {fileID: 4515867743137240373}
   homePos: {fileID: 1599325682}
   maxRange: 10
-  minRange: 2
+  minRange: 0
 --- !u!1 &2072839849
 GameObject:
   m_ObjectHideFlags: 0
@@ -22779,7 +22779,7 @@ GameObject:
   - component: {fileID: 4515867743137240377}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
