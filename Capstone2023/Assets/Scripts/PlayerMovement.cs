@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     Vector2 movement;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,6 +20,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Move();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetBool("isAttacking", true);
+        }
     }
 
     void FixedUpdate()

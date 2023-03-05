@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private GameObject attackArea = default; 
+    private GameObject attackArea = default;
+    private Animator anim;
 
     private bool attacking = false;
 
@@ -15,6 +16,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         attackArea = transform.GetChild(0).gameObject;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class PlayerAttack : MonoBehaviour
 
             if(timer >= timeToAttack)
             {
+                //anim.SetBool("isAttacking", false);
                 timer = 0;
                 attacking = false;
                 attackArea.SetActive(attacking);
