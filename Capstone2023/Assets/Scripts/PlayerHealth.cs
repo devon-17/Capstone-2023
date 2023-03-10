@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private float health = 0f;
-    public float maxHealth = 100f;
+    public float health = 0f;
+    private float maxHealth = 100f;
 
     void Start()
     {

@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            anim.SetBool("isAttacking", true);
+            StartCoroutine(TimedAttack(.3f));
         }
     }
 
@@ -47,5 +47,12 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("Last Horizontal", movement.x); // setting the last horizontal param to which way we are facing
             anim.SetFloat("Last Vertical", movement.y); // setting the last vertical param to which way we are facing
         }
+    }
+
+    public IEnumerator TimedAttack(float timeToWait)
+    {
+        anim.SetBool("isAttacking", true);
+        yield return new WaitForSeconds(timeToWait);
+        anim.SetBool("isAttacking", false);
     }
 }

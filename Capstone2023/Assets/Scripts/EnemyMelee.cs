@@ -24,7 +24,7 @@ public class EnemyMelee : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        while(other.gameObject.tag == "Player")
         {
             if(attackSpeed <= canAttack)
             {
