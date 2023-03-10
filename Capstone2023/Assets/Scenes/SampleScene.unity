@@ -22380,6 +22380,7 @@ GameObject:
   - component: {fileID: 1887774457}
   - component: {fileID: 1887774463}
   - component: {fileID: 1887774464}
+  - component: {fileID: 1887774465}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -22554,6 +22555,20 @@ MonoBehaviour:
   homePos: {fileID: 1599325682}
   maxRange: 10
   minRange: 0
+--- !u!114 &1887774465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887774456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59cef3a127bafcc42aea78f2e058db10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 10
+  attackSpeed: 1
 --- !u!1 &2072839849
 GameObject:
   m_ObjectHideFlags: 0
@@ -22775,7 +22790,7 @@ GameObject:
   - component: {fileID: 4515867743137240370}
   - component: {fileID: 4515867743137240371}
   - component: {fileID: 4515867743137240368}
-  - component: {fileID: 4515867743137240376}
+  - component: {fileID: 4515867743137240378}
   - component: {fileID: 4515867743137240377}
   m_Layer: 0
   m_Name: Player
@@ -22804,19 +22819,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4515867743137240376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4515867743137240374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0e148d63688ae0428e745c0e4d29627, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!114 &4515867743137240377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22829,3 +22831,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b36b2d0eb51e046af9d9b28ae5e456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4515867743137240378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515867743137240374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec649c340aaa9e41b48d904517b2d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
