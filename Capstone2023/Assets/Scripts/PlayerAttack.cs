@@ -33,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
 
             if(timer >= timeToAttack)
             {
-                //anim.SetBool("isAttacking", false);
+                
                 timer = 0;
                 attacking = false;
                 attackArea.SetActive(attacking);
