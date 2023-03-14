@@ -517,12 +517,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  speed: 1.5
+  speed: 0
   data: {fileID: 11400000, guid: 2316601870fe44340966e3a30466056a, type: 2}
   anim: {fileID: 0}
   target: {fileID: 4515867743137240373}
   homePos: {fileID: 1599325682}
-  maxRange: 10
+  maxRange: 0
   minRange: 0
 --- !u!61 &779342206
 BoxCollider2D:
@@ -664,7 +664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779342203}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.94, y: 0.03999999, z: 0}
+  m_LocalPosition: {x: -7.39, y: 3.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22591,7 +22591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1887774457
 MonoBehaviour:
   m_ObjectHideFlags: 0
