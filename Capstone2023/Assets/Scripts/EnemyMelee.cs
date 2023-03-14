@@ -28,7 +28,7 @@ public class EnemyMelee : MonoBehaviour
         {
             if(attackSpeed <= canAttack)
             {
-              //  enemy.anim.SetBool("inRange", true);
+                enemy.anim.SetBool("inRange", true);
                 other.gameObject.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage);
                 canAttack = 0f;
             }else
