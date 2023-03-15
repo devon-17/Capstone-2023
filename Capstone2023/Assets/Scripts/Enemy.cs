@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     public float maxRange;
     public float minRange;
 
+    public bool canMove = true;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -32,7 +34,12 @@ public class Enemy : MonoBehaviour
         var distance = Vector3.Distance(target.position, transform.position);
         if(distance <= maxRange && distance >= minRange)
         {
-            FollowPlayer();
+            if (canMove == true)
+            {
+                FollowPlayer();
+            }
+            
+            
         }
         else if(distance >= maxRange)
         {

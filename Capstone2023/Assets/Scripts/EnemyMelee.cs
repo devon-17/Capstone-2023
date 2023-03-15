@@ -8,12 +8,12 @@ public class EnemyMelee : MonoBehaviour
     public float attackSpeed = 1f;
     private float canAttack;
 
-    Enemy enemy;
+     Enemy enemy;
 
     // Start is called before the first frame update
     void Start()
     {
-        enemy = GetComponent<Enemy>();
+        enemy = this.GetComponentInParent<Enemy>();
     }
 
     // Update is called once per frame
@@ -28,6 +28,7 @@ public class EnemyMelee : MonoBehaviour
         {
             if(attackSpeed <= canAttack)
             {
+                enemy.canMove = false;
                 enemy.anim.SetBool("inRange", true);
                 other.gameObject.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage);
                 canAttack = 0f;
@@ -41,6 +42,7 @@ public class EnemyMelee : MonoBehaviour
     void OnTriggerExit2D(Collider2D other){
         if(other.gameObject.tag == "Player")
         {
+            enemy.canMove = true;
             enemy.anim.SetBool("inRange", false);
         }
     }

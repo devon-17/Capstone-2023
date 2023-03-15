@@ -203,6 +203,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34691820}
   m_CullTransparentMesh: 0
+--- !u!1 &210429158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 210429159}
+  - component: {fileID: 210429161}
+  - component: {fileID: 210429160}
+  m_Layer: 0
+  m_Name: meleeCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &210429159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210429158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2064202124}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &210429160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210429158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59cef3a127bafcc42aea78f2e058db10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 10
+  attackSpeed: 1
+--- !u!61 &210429161
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210429158}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.098134995, y: 0.22749448}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.2124977, y: 2.472024}
+  m_EdgeRadius: 0
 --- !u!1 &448286686
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +597,7 @@ MonoBehaviour:
   homePos: {fileID: 1599325682}
   maxRange: 0
   minRange: 0
+  canMove: 1
 --- !u!61 &779342206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22759,6 +22833,7 @@ MonoBehaviour:
   homePos: {fileID: 1599325682}
   maxRange: 10
   minRange: 0
+  canMove: 1
 --- !u!114 &1887774465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22788,7 +22863,6 @@ GameObject:
   - component: {fileID: 2064202120}
   - component: {fileID: 2064202119}
   - component: {fileID: 2064202118}
-  - component: {fileID: 2064202117}
   m_Layer: 0
   m_Name: tomato
   m_TagString: Untagged
@@ -22796,20 +22870,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2064202117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064202116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59cef3a127bafcc42aea78f2e058db10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDamage: 10
-  attackSpeed: 1
 --- !u!114 &2064202118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22830,6 +22890,7 @@ MonoBehaviour:
   homePos: {fileID: 1599325682}
   maxRange: 10
   minRange: 0
+  canMove: 1
 --- !u!61 &2064202119
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22840,10 +22901,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06047845, y: 0.022679448}
+  m_Offset: {x: 0.05835867, y: 0.168206}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -22854,7 +22915,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6572881, y: 1.4909704}
+  m_Size: {x: 1.0259886, y: 0.82886595}
   m_EdgeRadius: 0
 --- !u!114 &2064202120
 MonoBehaviour:
@@ -22973,7 +23034,8 @@ Transform:
   m_LocalPosition: {x: -16.12, y: 0.03999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 210429159}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
