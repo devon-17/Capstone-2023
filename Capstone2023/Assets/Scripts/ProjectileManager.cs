@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyProjectiles : MonoBehaviour
+public class ProjectileManager : MonoBehaviour
 {
+    private Transform player;
+
     public GameObject projectile;
+
+    public float projectileSpeed;
+
     public float attackSpeed = 1f;
+
     private float canAttack;
 
     Enemy enemy;
@@ -14,17 +20,18 @@ public class EnemyProjectiles : MonoBehaviour
     void Start()
     {
         enemy = this.GetComponentInParent<Enemy>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-         
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     public void Shoot()
     {
-        Instantiate(projectile, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
+        Instantiate(projectile,
+        new Vector2(gameObject.transform.position.x,
+            gameObject.transform.position.y),
+        Quaternion.identity);
+
+        projectile.GetComponent<Rigidbody2D>().velocity =
+            (player.position - projectile.transform.position) * projectileSpeed;
     }
 
     void OnTriggerStay2D(Collider2D other)
