@@ -24,7 +24,7 @@ public class EnemyProjectiles : MonoBehaviour
 
     public void Shoot()
     {
-        Instantiate(projectile, new Vector2(gameObject.transform.position.x * 5, gameObject.transform.position.y), Quaternion.identity);
+        Instantiate(projectile, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
     }
 
     void OnTriggerStay2D(Collider2D other)
