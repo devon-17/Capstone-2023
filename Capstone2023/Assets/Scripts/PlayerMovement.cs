@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5;
+
+    public float moveSpeed = 5;  
     private Rigidbody2D rb;
     private Animator anim;
     Vector2 movement;
@@ -20,11 +21,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Move();
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(TimedAttack(.3f));
-        }
     }
 
     void FixedUpdate()
@@ -47,12 +43,5 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("Last Horizontal", movement.x); // setting the last horizontal param to which way we are facing
             anim.SetFloat("Last Vertical", movement.y); // setting the last vertical param to which way we are facing
         }
-    }
-
-    public IEnumerator TimedAttack(float timeToWait)
-    {
-        anim.SetBool("isAttacking", true);
-        yield return new WaitForSeconds(timeToWait);
-        anim.SetBool("isAttacking", false);
     }
 }

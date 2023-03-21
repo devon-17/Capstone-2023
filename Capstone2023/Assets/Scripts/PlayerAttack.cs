@@ -22,9 +22,9 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !attacking)
         {
-            Attack();
+            StartCoroutine(TimedAttack(timeToAttack));
         }
 
         if (attacking)
@@ -33,9 +33,8 @@ public class PlayerAttack : MonoBehaviour
 
             if(timer >= timeToAttack)
             {
-                
-                timer = 0;
                 attacking = false;
+                timer = 0;
                 attackArea.SetActive(attacking);
             }
         }
@@ -44,6 +43,21 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         attacking = true;
+        anim.SetBool("isAttacking", true);
         attackArea.SetActive(attacking);
+    }
+
+    private void EndAttack()
+    {
+        anim.SetBool("isAttacking", false);
+        attackArea.SetActive(false);
+    }
+
+
+    public IEnumerator TimedAttack(float timeToWait)
+    {
+        Attack();
+        yield return new WaitForSeconds(timeToWait);
+        EndAttack();
     }
 }
