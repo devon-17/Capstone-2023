@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private Transform player;
+    public float projectileSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -18,5 +19,16 @@ public class Projectile : MonoBehaviour
             transform.rotation =
                 Quaternion.Euler(new Vector3(0f, 0f, angle + 90f));
         }
+
+        gameObject.GetComponent<Rigidbody2D>().velocity =
+            (player.position - gameObject.transform.position) * projectileSpeed;
+
+        Destroy(gameObject, 4f);
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Player")
+            Destroy(gameObject);
     }
 }

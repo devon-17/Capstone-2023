@@ -8,8 +8,6 @@ public class ProjectileManager : MonoBehaviour
 
     public GameObject projectile;
 
-    public float projectileSpeed;
-
     public float attackSpeed = 1f;
 
     private float canAttack;
@@ -29,9 +27,6 @@ public class ProjectileManager : MonoBehaviour
         new Vector2(gameObject.transform.position.x,
             gameObject.transform.position.y),
         Quaternion.identity);
-
-        projectile.GetComponent<Rigidbody2D>().velocity =
-            (player.position - projectile.transform.position) * projectileSpeed;
     }
 
     void OnTriggerStay2D(Collider2D other)
