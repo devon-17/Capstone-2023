@@ -29,6 +29,15 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.tag == "Player")
+        {
+            PlayerHealth playerHealth = col.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.UpdateHealth(-10f);
+            }
+
             Destroy(gameObject);
+        }
+           
     }
 }
