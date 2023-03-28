@@ -4,25 +4,31 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Damage and Speed")]
     [SerializeField]
     private int damage = 5;
     [SerializeField]
     private float speed = 1.5f;
 
-    public EnemyData data;
+    [SerializeField]
+    private EnemyData data;
     private GameObject player;
 
+    [Header("Movement")]
     [HideInInspector] public Animator anim;
     public Transform target;
     public Transform homePos;
     public float maxRange;
     public float minRange;
-
     public bool canMove = true;
+
+    [Header("Death")]
+    public GameObject drop;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
         data.hp = data.maxHp;
         SetEnemyVales();

@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 15
+  drop: {fileID: 0}
 --- !u!114 &1360571734808254499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +251,7 @@ MonoBehaviour:
   maxRange: 10
   minRange: 0
   canMove: 1
+  drop: {fileID: 0}
 --- !u!114 &1360571734808254498
 MonoBehaviour:
   m_ObjectHideFlags: 0

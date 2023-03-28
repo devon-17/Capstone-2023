@@ -9,6 +9,9 @@ public class EnemyHealth : MonoBehaviour
 
     private int MAX_HEALTH = 100;
 
+    [Header("Death")]
+    public GameObject drop;
+
 
     public void SetHealth(int maxHealth, int health)
     {
@@ -54,6 +57,7 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("I am Dead!");
+        Instantiate(drop, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
