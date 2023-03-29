@@ -123,6 +123,42 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &171542846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 171542847}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &171542847
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171542846}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1322328278}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &283451501
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +373,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &660643229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 660643230}
+  m_Layer: 5
+  m_Name: GameObject (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &660643230
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660643229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1322328278}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -100, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &709312580
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +539,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1322328278 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5939291811905202602, guid: 604cff5efb84b0c4794574b84f045141, type: 3}
+  m_PrefabInstance: {fileID: 5939291811075810782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1362291375
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,9 +573,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f1d8760f408d246934c603779e3971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentCanvas: {fileID: 2018248594}
+  parent:
+  - {fileID: 171542847}
+  - {fileID: 1594032330}
+  - {fileID: 660643230}
   menuItems:
-  - {fileID: 4554343834735069435, guid: d19d05e63c39d6f4cb762fbd38c731e2, type: 3}
+  - {fileID: 8224618608848832595, guid: 8045099eb32e8b9458579ef8b862d2b1, type: 3}
+  - {fileID: 3902174148390205044, guid: 16bb18c3754380d4a8a8f88c45d6fdb8, type: 3}
+  - {fileID: 5972541731389603231, guid: efc269eaf91280a41963da0b7fdb6c48, type: 3}
+  - {fileID: 4765223753318481426, guid: 09805e4a0cefe334f83ac33bbe739b0f, type: 3}
+  - {fileID: 7975437024889949518, guid: 4949e5dc9a8a5314f8eff307768b4801, type: 3}
 --- !u!4 &1362291377
 Transform:
   m_ObjectHideFlags: 0
@@ -13458,6 +13542,42 @@ PolygonCollider2D:
       - {x: 0.2967348, y: 0.014518976}
       - {x: 1.3064137, y: -0.75}
   m_UseDelaunayMesh: 0
+--- !u!1 &1594032329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1594032330}
+  m_Layer: 5
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1594032330
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594032329}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1322328278}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 100, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1634440937
 GameObject:
   m_ObjectHideFlags: 0
@@ -22257,11 +22377,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2018248594 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5939291811213435468, guid: 604cff5efb84b0c4794574b84f045141, type: 3}
-  m_PrefabInstance: {fileID: 5939291811075810782}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2072839849
 GameObject:
   m_ObjectHideFlags: 0
@@ -22690,5 +22805,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5939291811905202602, guid: 604cff5efb84b0c4794574b84f045141, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 171542847}
+    - targetCorrespondingSourceObject: {fileID: 5939291811905202602, guid: 604cff5efb84b0c4794574b84f045141, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1594032330}
+    - targetCorrespondingSourceObject: {fileID: 5939291811905202602, guid: 604cff5efb84b0c4794574b84f045141, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 660643230}
   m_SourcePrefab: {fileID: 100100000, guid: 604cff5efb84b0c4794574b84f045141, type: 3}
