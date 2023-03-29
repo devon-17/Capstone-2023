@@ -6,21 +6,21 @@ public class DungeonSpawner : MonoBehaviour
 {
     //You may as well use transform here rather than gameobjects
     public Transform[] spawnPoints;
- 
+
+    public GameObject[] enemy;
+
     public int enemiesCount;
- 
-    public GameObject enemy;
- 
+
     [SerializeField]
     private float spawnDelay = 5f;
 
     private Enemy enemyScript;
- 
+
     private void Start()
     {
         StartCoroutine(SpawnMonster(spawnDelay));
     }
- 
+
     IEnumerator SpawnMonster(float waitTime)
     {
         while (enemiesCount >= 1)
@@ -28,16 +28,16 @@ public class DungeonSpawner : MonoBehaviour
             var pointSelected = Random.Range(0, spawnPoints.Length);
             var pointToSpawn = spawnPoints[pointSelected].position;
             var homePosition = spawnPoints[pointSelected];
- 
-            Instantiate(enemy, pointToSpawn, Quaternion.identity);
+
+            var randomEnemy = Random.Range(0, enemy.Length);
+            Instantiate(enemy[randomEnemy], pointToSpawn, Quaternion.identity);
             enemyScript = FindObjectOfType<Enemy>();
             enemyScript.homePos = homePosition;
 
- 
             enemiesCount--;
- 
+
             yield return new WaitForSeconds(waitTime);
         }
-        Destroy(gameObject);
+        Destroy (gameObject);
     }
 }

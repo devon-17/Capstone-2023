@@ -7,21 +7,28 @@ public class Enemy : MonoBehaviour
     [Header("Damage and Speed")]
     [SerializeField]
     private int damage = 5;
+
     [SerializeField]
     private float speed = 1.5f;
 
     [SerializeField]
     private EnemyData data;
+
     private GameObject player;
 
     [Header("Movement")]
-    [HideInInspector] public Animator anim;
-    public Transform target;
-    public Transform homePos;
-    public float maxRange;
-    public float minRange;
-    public bool canMove = true;
+    [HideInInspector]
+    public Animator anim;
 
+    public Transform target;
+
+    public Transform homePos;
+
+    public float maxRange;
+
+    public float minRange;
+
+    public bool canMove = true;
 
     void Start()
     {
@@ -36,16 +43,14 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         var distance = Vector3.Distance(target.position, transform.position);
-        if(distance <= maxRange && distance >= minRange)
+        if (distance <= maxRange && distance >= minRange)
         {
             if (canMove == true)
             {
                 FollowPlayer();
             }
-            
-            
         }
-        else if(distance >= maxRange)
+        else if (distance >= maxRange)
         {
             GoHome();
         }
@@ -64,32 +69,44 @@ public class Enemy : MonoBehaviour
         Debug.Log("IsMoving is " + anim.GetBool("isMoving"));
         anim.SetFloat("Horizontal", (target.position.x - transform.position.x));
         anim.SetFloat("Vertical", (target.position.y - transform.position.y));
-        Debug.Log(anim.GetFloat("Horizontal") + ", " + anim.GetFloat("Vertical"));
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, data.speed * Time.deltaTime);
+        transform.position =
+            Vector3
+                .MoveTowards(transform.position,
+                target.transform.position,
+                data.speed * Time.deltaTime);
     }
 
     public void GoHome()
     {
         var distance = Vector3.Distance(transform.position, homePos.position);
 
-        anim.SetFloat("Horizontal", (homePos.position.x - transform.position.x));
+        anim
+            .SetFloat("Horizontal",
+            (homePos.position.x - transform.position.x));
         anim.SetFloat("Vertical", (homePos.position.y - transform.position.y));
-        transform.position = Vector3.MoveTowards(transform.position, homePos.position, data.speed * Time.deltaTime);
+        transform.position =
+            Vector3
+                .MoveTowards(transform.position,
+                homePos.position,
+                data.speed * Time.deltaTime);
 
-        if(distance == 0)
+        if (distance == 0)
         {
             anim.SetBool("isMoving", false);
-            anim.SetFloat("Last Horizontal", (target.position.x - transform.position.x)); // setting the last horizontal param to which way we are facing
-            anim.SetFloat("Last Vertical", (target.position.y - transform.position.y)); // setting the last vertical param to which way we are facing
+            anim
+                .SetFloat("Last Horizontal",
+                (target.position.x - transform.position.x)); // setting the last horizontal param to which way we are facing
+            anim
+                .SetFloat("Last Vertical",
+                (target.position.y - transform.position.y)); // setting the last vertical param to which way we are facing
         }
     }
-
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
         {
-            if(collider.GetComponent<EnemyHealth>() != null)
+            if (collider.GetComponent<EnemyHealth>() != null)
             {
                 collider.GetComponent<EnemyHealth>().Damage(damage);
                 this.GetComponent<EnemyHealth>().Damage(5);

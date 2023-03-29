@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class FoodMenuManager : MonoBehaviour
 {
+    public static FoodMenuManager instance;
+
     public Transform[] parent = new Transform[0];
 
     public GameObject[] menuItems = new GameObject[0];
@@ -14,17 +16,17 @@ public class FoodMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i <= menuItems.Length + 1; i++)
+        instance = this;
+    }
+
+    public void ShowMenu()
+    {
+        for (int i = 0; i < parent.Length; i++)
         {
             var randomItem = Random.Range(0, menuItems.Length);
             GameObject menuChild = Instantiate(menuItems[randomItem]);
             menuChild.transform.SetParent(parent[i]);
             menuChild.transform.position = parent[i].position;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }
