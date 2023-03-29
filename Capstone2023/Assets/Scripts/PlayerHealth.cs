@@ -2,19 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public float health = 0f;
     const float maxHealth = 100f;
-
+   
     public event Action<float> OnHealthChanged; // it will be invoked when the plays health is updated, it allows scripts to make changes to the players health.
 
     void Start()
     {
         health = maxHealth;
+     
     }
     
+    void Update()
+    {
+      
+    }
+
     public void UpdateHealth(float mod)
     {
         health += mod;

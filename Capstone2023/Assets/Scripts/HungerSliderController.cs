@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class HungerSliderController : MonoBehaviour
 {
 
-    public Slider mySlider;
+    public Slider hungerSlider;
     public float hunger;
     public float maxHunger = 100;
 
@@ -18,7 +18,11 @@ public class HungerSliderController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mySlider.value = hunger;
+        hungerSlider.value = hunger;
         hunger -= Time.deltaTime;
+        if(hunger > maxHunger)
+        {
+            hunger = 100;
+        }
     }
 }
