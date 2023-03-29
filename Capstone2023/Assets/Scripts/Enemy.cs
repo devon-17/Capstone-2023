@@ -22,8 +22,6 @@ public class Enemy : MonoBehaviour
     public float minRange;
     public bool canMove = true;
 
-    [Header("Death")]
-    public GameObject drop;
 
     void Start()
     {

@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  drop: {fileID: 3547354374276236071, guid: ab57676cefa017f4aa9a7195067405ea, type: 3}
 --- !u!61 &5760110537915840978
 BoxCollider2D:
   m_ObjectHideFlags: 0

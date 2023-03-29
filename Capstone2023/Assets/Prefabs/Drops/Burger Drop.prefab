@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3232223450517686042}
   - component: {fileID: 3680773372068273378}
   m_Layer: 0
-  m_Name: Fry Drop
+  m_Name: Burger Drop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1153131116, guid: dffd7d71fdd0b00419cb51b41f98e306, type: 3}
+  m_Sprite: {fileID: 1974891644, guid: dffd7d71fdd0b00419cb51b41f98e306, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3125, y: 0.625}
+    oldSize: {x: 0.75, y: 0.5625}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010d2aa7c1aca4945ae91ebf1ce95232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFry: 1
+  isFry: 0
   isCabbage: 0
   isTomato: 0
-  isBurger: 0
+  isBurger: 1
