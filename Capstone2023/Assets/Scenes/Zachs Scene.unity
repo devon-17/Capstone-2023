@@ -373,7 +373,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BackGroundColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -22617,6 +22617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cabbage
       objectReference: {fileID: 0}
+    - target: {fileID: 4111047188162945030, guid: b38795dc7bf74d34e9ccd4a05c7d6e94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4111047188162945534, guid: b38795dc7bf74d34e9ccd4a05c7d6e94, type: 3}
       propertyPath: target
       value: 
@@ -22844,7 +22848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec649c340aaa9e41b48d904517b2d33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1e+13
 --- !u!1001 &5760110539610783829
 PrefabInstance:
   m_ObjectHideFlags: 0
