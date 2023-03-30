@@ -13,6 +13,8 @@ public class FoodMenuManager : MonoBehaviour
 
     private Vector3 originalSize;
 
+    public GameObject menuParent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,23 @@ public class FoodMenuManager : MonoBehaviour
             GameObject menuChild = Instantiate(menuItems[randomItem]);
             menuChild.transform.SetParent(parent[i]);
             menuChild.transform.position = parent[i].position;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            PlayerMovement.instance.canMove = false;
+            ShowMenu();
+        }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(menuParent.activeInHierarchy)
+            {
+                menuParent.SetActive(false);
+                PlayerMovement.instance.canMove = true;
+            }
         }
     }
 }
