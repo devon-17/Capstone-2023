@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
 
     public bool canMove = true;
 
+    
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -37,6 +39,8 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         data.hp = data.maxHp;
         SetEnemyVales();
+
+        
     }
 
     // Update is called once per frame
@@ -110,6 +114,7 @@ public class Enemy : MonoBehaviour
             {
                 collider.GetComponent<EnemyHealth>().Damage(damage);
                 this.GetComponent<EnemyHealth>().Damage(5);
+                
             }
         }
     }
