@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HungerSliderController : MonoBehaviour
 {
+    public static HungerSliderController instance;
 
     public Slider hungerSlider;
     public float hunger;
@@ -12,6 +13,7 @@ public class HungerSliderController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         hunger = maxHunger;
     }
 
