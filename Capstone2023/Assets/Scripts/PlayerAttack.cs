@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public static PlayerAttack instance;
+
     private GameObject attackArea = default;
+
     private Animator anim;
 
-    private bool attacking = false;
+    public bool attacking = false;
 
     private float timeToAttack = 0.25f;
+
     private float timer = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         attackArea = transform.GetChild(0).gameObject;
         anim = GetComponent<Animator>();
     }
@@ -31,11 +36,11 @@ public class PlayerAttack : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if(timer >= timeToAttack)
+            if (timer >= timeToAttack)
             {
                 attacking = false;
                 timer = 0;
-                attackArea.SetActive(attacking);
+                attackArea.SetActive (attacking);
             }
         }
     }
@@ -44,7 +49,7 @@ public class PlayerAttack : MonoBehaviour
     {
         attacking = true;
         anim.SetBool("isAttacking", true);
-        attackArea.SetActive(attacking);
+        attackArea.SetActive (attacking);
     }
 
     private void EndAttack()
@@ -52,7 +57,6 @@ public class PlayerAttack : MonoBehaviour
         anim.SetBool("isAttacking", false);
         attackArea.SetActive(false);
     }
-
 
     public IEnumerator TimedAttack(float timeToWait)
     {

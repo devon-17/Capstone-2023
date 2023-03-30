@@ -7,18 +7,23 @@ public class FoodMenuManager : MonoBehaviour
 {
     public static FoodMenuManager instance;
 
+    public bool menuCreated = false;
+
     public Transform[] parent = new Transform[0];
 
     public GameObject[] menuItems = new GameObject[0];
 
-    private Vector3 originalSize;
-
     public GameObject menuParent;
+
+    public GameObject enterBtn;
+
+    public GameObject exitBtn;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+        menuCreated = false;
     }
 
     public void ShowMenu()
@@ -34,18 +39,38 @@ public class FoodMenuManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            PlayerMovement.instance.canMove = false;
+            enterBtn.SetActive(true);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        enterBtn.SetActive(false);
+    }
+
+    public void EnterMenu()
+    {
+        PlayerMovement.instance.canMove = false;
+        PlayerAttack.instance.attacking = false;
+        if (!menuCreated)
+        {
             ShowMenu();
+            menuCreated = true;
         }
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(menuParent.activeInHierarchy)
-            {
-                menuParent.SetActive(false);
-                PlayerMovement.instance.canMove = true;
-            }
-        }
+        else
+            menuParent.SetActive(true);
+        exitBtn.SetActive(true);
+        enterBtn.SetActive(false);
+    }
+
+    public void ExitMenu()
+    {
+        PlayerMovement.instance.canMove = true;
+        PlayerAttack.instance.attacking = true;
+        menuParent.SetActive(false);
+        exitBtn.SetActive(false);
+        enterBtn.SetActive(true);
     }
 }
