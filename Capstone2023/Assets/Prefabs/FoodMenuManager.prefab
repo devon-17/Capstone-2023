@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1811392360349524847}
   - component: {fileID: 1811392360349524846}
+  - component: {fileID: 1334830984}
   m_Layer: 0
   m_Name: FoodMenuManager
   m_TagString: Untagged
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f1d8760f408d246934c603779e3971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuCreated: 0
   parent:
   - {fileID: 0}
   - {fileID: 0}
@@ -54,3 +56,36 @@ MonoBehaviour:
   - {fileID: 5972541731389603231, guid: efc269eaf91280a41963da0b7fdb6c48, type: 3}
   - {fileID: 4765223753318481426, guid: 09805e4a0cefe334f83ac33bbe739b0f, type: 3}
   - {fileID: 7975437024889949518, guid: 4949e5dc9a8a5314f8eff307768b4801, type: 3}
+  menuParent: {fileID: 0}
+  enterBtn: {fileID: 0}
+  exitBtn: {fileID: 0}
+  fryHungerAmount: 15
+  burgerHungerAmount: 20
+  lettuceHungerAmount: 5
+  tomatoHungerAmount: 10
+--- !u!61 &1334830984
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811392360349524849}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8, y: 8}
+  m_EdgeRadius: 0
