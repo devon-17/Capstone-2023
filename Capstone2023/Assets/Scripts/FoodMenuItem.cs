@@ -17,8 +17,45 @@ public class FoodMenuItem : MonoBehaviour
         if (isFry)
             if(DropsManager.instance.fryAmount >= item.fryAmount)
             {
-                //HungerSliderController.instance.hunger += 10;
+                HungerSliderController.instance.hunger += FoodMenuManager.instance.fryHungerAmount; 
                 Debug.Log("Hunger Added");
+                DropsManager.instance.fryAmount -= item.fryAmount;
+                Destroy(gameObject);
             }
+        if (isBurger)
+            if(DropsManager.instance.burgerAmount >= item.burgerAmount)
+            {
+                HungerSliderController.instance.hunger += FoodMenuManager.instance.burgerHungerAmount;
+                Debug.Log("Hunger Added");
+                DropsManager.instance.burgerAmount -= item.burgerAmount;
+                Destroy(gameObject);
+            }
+        if (isBurgerAndFry)
+            if(DropsManager.instance.burgerAmount >= item.burgerAmount && DropsManager.instance.fryAmount >= item.fryAmount)
+            {
+                HungerSliderController.instance.hunger += (FoodMenuManager.instance.fryHungerAmount + FoodMenuManager.instance.burgerHungerAmount);
+                Debug.Log("Hunger Added");
+                DropsManager.instance.fryAmount -= item.fryAmount;
+                DropsManager.instance.burgerAmount -= item.burgerAmount;
+                Destroy(gameObject);
+            }
+        if (isTomAndSalad)
+            if(DropsManager.instance.tomatoAmount >= item.tomatoAmount && DropsManager.instance.cabbageAmount >= item.lettuceAmount)
+            {
+                HungerSliderController.instance.hunger += (FoodMenuManager.instance.lettuceHungerAmount + FoodMenuManager.instance.tomatoHungerAmount);
+                Debug.Log("Hunger Added");
+                DropsManager.instance.tomatoAmount -= item.tomatoAmount;
+                DropsManager.instance.cabbageAmount -= item.lettuceAmount;
+                Destroy(gameObject);
+            }
+        if (isSalad)
+            if(DropsManager.instance.cabbageAmount >= item.lettuceAmount)
+            {
+                HungerSliderController.instance.hunger += FoodMenuManager.instance.lettuceHungerAmount;
+                Debug.Log("Hunger Added");
+                DropsManager.instance.cabbageAmount -= item.lettuceAmount;
+                Destroy(gameObject);
+            }
+        
     }
 }
