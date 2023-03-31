@@ -12,6 +12,11 @@ public class FoodMenuItem : MonoBehaviour
         
     }
 
+    void Update()
+    {
+
+    }
+
     public void MenuClick(FoodMenuItem item)
     {
         if (isFry)

@@ -19,13 +19,23 @@ public class FoodMenuManager : MonoBehaviour
 
     public GameObject exitBtn;
 
-    public int fryHungerAmount, burgerHungerAmount, lettuceHungerAmount, tomatoHungerAmount;
+    public int
+
+            fryHungerAmount,
+            burgerHungerAmount,
+            lettuceHungerAmount,
+            tomatoHungerAmount;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         menuCreated = false;
+    }
+
+    void Update()
+    {
+        CheckMenuEmpty();
     }
 
     public void ShowMenu()
@@ -74,5 +84,23 @@ public class FoodMenuManager : MonoBehaviour
         menuParent.SetActive(false);
         exitBtn.SetActive(false);
         enterBtn.SetActive(true);
+    }
+
+    public void CheckMenuEmpty()
+    {
+        int emptyMenuCard = 0;
+
+        if (menuCreated)
+        {
+            for (int i = 0; i < parent.Length; i++)
+            {
+                if (parent[i].transform.childCount == 0)
+                {
+                    emptyMenuCard++;
+                }
+            }
+
+            if (emptyMenuCard == parent.Length) ShowMenu();
+        }
     }
 }
