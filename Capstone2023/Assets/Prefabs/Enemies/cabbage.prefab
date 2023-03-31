@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e148d63688ae0428e745c0e4d29627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 15
   drop: {fileID: 3547354374276236071, guid: 8a9b4fabe7e633c46965f7fb0ac2e179, type: 3}
   damageSound: {fileID: 8300000, guid: 79170c5c764fef944a85ceabaf720562, type: 3}
 --- !u!114 &4111047188162945534
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  speed: 2
+  speed: 0
   data: {fileID: 11400000, guid: 56533a19cd2a94e42a0f49650dc7ae00, type: 2}
   anim: {fileID: 0}
   target: {fileID: 0}
