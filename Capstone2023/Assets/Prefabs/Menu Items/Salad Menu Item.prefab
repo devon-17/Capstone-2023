@@ -90,6 +90,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60d72886c965ba46a2e709130972004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFry: 0
+  isBurger: 0
+  isBurgerAndFry: 0
+  isTomAndSalad: 0
+  isSalad: 1
   fryAmount: 0
   burgerAmount: 0
   lettuceAmount: 1
@@ -137,4 +142,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1687042680060013900}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7663792155544977451}
+        m_TargetAssemblyTypeName: FoodMenuItem, Assembly-CSharp
+        m_MethodName: MenuClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7663792155544977451}
+          m_ObjectArgumentAssemblyTypeName: FoodMenuItem, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

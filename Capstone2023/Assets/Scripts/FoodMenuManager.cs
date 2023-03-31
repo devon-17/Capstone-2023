@@ -19,6 +19,8 @@ public class FoodMenuManager : MonoBehaviour
 
     public GameObject exitBtn;
 
+    public int fryHungerAmount, burgerHungerAmount, lettuceHungerAmount, tomatoHungerAmount;
+
     // Start is called before the first frame update
     void Start()
     {
