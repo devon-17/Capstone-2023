@@ -31,7 +31,7 @@ public class DungeonSpawner : MonoBehaviour
 
             var randomEnemy = Random.Range(0, enemy.Length);
             Instantiate(enemy[randomEnemy], pointToSpawn, Quaternion.identity);
-            enemyScript = enemy[randomEnemy].GetComponent<Enemy>();
+            enemyScript = FindObjectOfType<Enemy>();
             enemyScript.homePos = homePosition;
 
             enemiesCount--;
