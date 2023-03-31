@@ -96,7 +96,7 @@ Transform:
   m_Children:
   - {fileID: 1360571733798215729}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1360571734808254494
 SpriteRenderer:
@@ -250,7 +250,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   target: {fileID: 0}
   homePos: {fileID: 0}
-  maxRange: 5
+  maxRange: 10
   minRange: 1
   canMove: 1
 --- !u!114 &1360571734808254498

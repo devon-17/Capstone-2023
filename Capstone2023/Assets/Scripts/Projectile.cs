@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     private Transform player;
     public float projectileSpeed;
+    public float projectileDamage = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,14 +27,14 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, 4f);
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.tag == "Player")
         {
             PlayerHealth playerHealth = col.gameObject.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
-                playerHealth.UpdateHealth(-10f);
+                playerHealth.UpdateHealth(-projectileDamage);
             }
 
             Destroy(gameObject);
