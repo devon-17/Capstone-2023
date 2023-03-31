@@ -12,6 +12,14 @@ public class EnemyHealth : MonoBehaviour
     [Header("Death")]
     public GameObject drop;
 
+    public AudioClip damageSound;
+    private AudioSource audioSource;
+
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void SetHealth(int maxHealth, int health)
     {
@@ -21,7 +29,9 @@ public class EnemyHealth : MonoBehaviour
 
     public void Damage(int amount)
     {
-        if(amount < 0)
+        audioSource.PlayOneShot(damageSound);
+
+        if (amount < 0)
         {
             throw new System.ArgumentOutOfRangeException("Cannot have negative Damage");
         }

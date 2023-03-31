@@ -16,12 +16,16 @@ public class PlayerAttack : MonoBehaviour
 
     private float timer = 0f;
 
+    public AudioClip attackSound;
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         attackArea = transform.GetChild(0).gameObject;
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -50,6 +54,7 @@ public class PlayerAttack : MonoBehaviour
         attacking = true;
         anim.SetBool("isAttacking", true);
         attackArea.SetActive (attacking);
+        audioSource.PlayOneShot(attackSound);
     }
 
     private void EndAttack()

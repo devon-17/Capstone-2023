@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMelee : MonoBehaviour
 {
-    public float attackDamage = 10f;
+    public float attackDamage = 0f;
     public float attackSpeed = 1f;
     private float canAttack;
 

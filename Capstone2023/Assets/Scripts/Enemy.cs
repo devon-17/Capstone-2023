@@ -6,10 +6,10 @@ public class Enemy : MonoBehaviour
 {
     [Header("Damage and Speed")]
     [SerializeField]
-    private int damage = 5;
+    private int damage = 0;
 
     [SerializeField]
-    private float speed = 1.5f;
+    private float speed = 0f;
 
     [SerializeField]
     private EnemyData data;
