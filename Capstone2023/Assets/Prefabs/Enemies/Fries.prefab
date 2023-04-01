@@ -186,9 +186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e1aff3c4c97ac479e25cbf32c70a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 0
   speed: 0
-  data: {fileID: 11400000, guid: 2316601870fe44340966e3a30466056a, type: 2}
+  data: {fileID: 11400000, guid: adcd46eb9eacad54a8a676bd12fc726e, type: 2}
   anim: {fileID: 0}
   target: {fileID: 0}
   homePos: {fileID: 0}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 3547354374276236071, guid: cadaef94b0d52b44b9de4f57712fceba, type: 3}
-  attackSpeed: 3
+  attackSpeed: 2
 --- !u!82 &3941960012211387232
 AudioSource:
   m_ObjectHideFlags: 0

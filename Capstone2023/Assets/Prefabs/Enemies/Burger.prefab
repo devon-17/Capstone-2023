@@ -96,7 +96,7 @@ Transform:
   m_Children:
   - {fileID: 1360571733798215729}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1360571734808254494
 SpriteRenderer:
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  speed: 1.5
+  speed: 0
   data: {fileID: 11400000, guid: 2316601870fe44340966e3a30466056a, type: 2}
   anim: {fileID: 0}
   target: {fileID: 0}
