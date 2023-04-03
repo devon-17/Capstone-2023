@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Dungeon Two.unity
     guid: f8f3dca3da6036245a1e81f44c1f7173
   - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 0c8b27b1d5dcea84d983246ff7cc02a6
+  - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: 75e777565459725468dd81b16fa0fa75
   m_configObjects: {}
