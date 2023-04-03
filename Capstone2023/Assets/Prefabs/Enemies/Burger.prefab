@@ -250,8 +250,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   target: {fileID: 0}
   homePos: {fileID: 0}
-  maxRange: 10
-  minRange: 1
+  maxRange: 0
+  minRange: 0
   canMove: 1
 --- !u!114 &1360571734808254498
 MonoBehaviour:
