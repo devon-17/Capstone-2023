@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class HungerSliderController : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class HungerSliderController : MonoBehaviour
         if(hunger > maxHunger)
         {
             hunger = 100;
+        }
+        else if (hunger <= 0)
+        {
+            hunger = 0f;
+            SceneManager.LoadScene("GameOverScene");
         }
     }
 }

@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,16 +23,10 @@ public class SceneManagerScript : MonoBehaviour
         
     }
 
-    public void StartButton()
-    {
-        SceneManager.LoadScene(1);
-    }
+    
     public void QuitButton()
     {
         Application.Quit();
     }
-    public void StartGame()
-    {
-        SceneManager.LoadScene(2);
-    }
+    
 }
