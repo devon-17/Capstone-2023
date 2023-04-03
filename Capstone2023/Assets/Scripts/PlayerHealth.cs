@@ -6,12 +6,15 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static PlayerHealth instance;
+
     public float health = 0f;
 
     const float maxHealth = 100f;
 
     void Start()
     {
+        instance = this;
         health = maxHealth;
     }
 

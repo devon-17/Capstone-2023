@@ -35,6 +35,7 @@ public class Projectile : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.UpdateHealth(-projectileDamage);
+                Debug.Log(PlayerHealth.instance.health);
             }
 
             Destroy(gameObject);
