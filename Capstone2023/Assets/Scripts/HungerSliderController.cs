@@ -15,6 +15,7 @@ public class HungerSliderController : MonoBehaviour
     void Start()
     {
         instance = this;
+        hungerSlider.maxValue = maxHunger;
         hunger = maxHunger;
     }
 
